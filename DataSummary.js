@@ -22,12 +22,18 @@ dotenv.config();  // dont for get to add .env file with OPENAI_API_KEY
 
 const model = new ChatOpenAI({
     modelName: "gpt-3.5-turbo",
-    temperature: 0.5,
+    temperature: 0.0,
 });
 
 const prompt = ChatPromptTemplate.fromTemplate(
-  `Answer the user's question from the following context: 
-  {context}
+  `Given the paramount importance of maintaining comprehensive records in our nursing home environment, we require a :
+  detailed summary of the recent appointment with one of our patients. This summary should encapsulate :
+  all pertinent data gathered during the appointment, including the patient's current health status, vital signs, medication review, assessment findings, treatment :
+  adjustments, and recommendations for ongoing care. The aim is to have a thorough overview of the patient's condition and the actions :
+  taken during the appointment, facilitating seamless communication and informed decision-making among the care team. Please generate the complete summary based:
+   on the data collected from the appointment.Answer the user's question from the following context: 
+  {context}:
+  Make the ouput more comprehensive
   Question: {input}`
 );
 
@@ -37,7 +43,7 @@ const chain = await createStuffDocumentsChain({
 });
 
 const loader = new DirectoryLoader(
-  "C:\\BisonBytes\\DoctorsNotes",{
+  "DoctorsNotes",{
     ".json": (path) => new JSONLoader(path, "/texts"),
     ".jsonl": (path) => new JSONLinesLoader(path, "/html"),
     ".txt": (path) => new TextLoader(path),
@@ -48,8 +54,8 @@ const loader = new DirectoryLoader(
 const docs = await loader.load();
 
 const splitter = new RecursiveCharacterTextSplitter({
-  chunkSize: 1000,
-  chunkOverlap: 200,
+  chunkSize: 100,
+  chunkOverlap: 20,
 })
 
 const splitDocs = await splitter.splitDocuments(docs)
@@ -74,10 +80,10 @@ const retrievalChain = await createRetrievalChain({
 // });
 
 const response = await retrievalChain.invoke({
-  input: "What is the summary of the appointment",
-});
+  input: "Give a comprehensive review on the patietns condition and all of her previous appointments be comprehensive in your response.",
+  context: splitDocs,});
 
-console.log(response);
+console.log(response["answer"]);
 
 
 
