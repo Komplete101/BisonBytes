@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Care Guard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="container mx-auto p-4">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="mb-4 border-b">
+                <h1 class="text-2xl font-semibold">Care Guard</h1>
+                <h2 class="text-xl font-semibold text-blue-600">Welcome Admin</h2>
+                <h3 class="text-xl font-semibold text-blue-400">Choose A Selection</h3>
+            </div>
+
+            <!-- Search bar -->
+            <div class="mb-4 relative">
+                <input class="bg-gray-100 h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none" type="search" name="search" placeholder="Search"/>
+                <button type="submit" class="absolute right-0 top-0 mt-2 mr-4">
+                    <i class="fas fa-search text-gray-400"></i>
+                </button>
+            </div>
+
+            <!-- Selection for Doctor List and Patient List -->
+            <div class="flex justify-around mb-4">
+                <button onclick="location.href='doctor_list.html';" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition ease-in duration-200">
+                    Doctor List
+                </button>
+                <button onclick="location.href='patient_list.html';" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition ease-in duration-200">
+                    Patient List
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
