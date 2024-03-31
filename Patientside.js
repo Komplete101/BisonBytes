@@ -22,7 +22,7 @@ dotenv.config();  // dont forget to add .env file with OPENAI_API_KEY
 
 const model = new ChatOpenAI({
     modelName: "gpt-3.5-turbo",
-    temperature: 0.3,
+    temperature: 0.8,
 });
 
 const prompt = ChatPromptTemplate.fromTemplate(
