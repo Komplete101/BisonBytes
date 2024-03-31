@@ -14,11 +14,11 @@ use('mongodbVSCodePlaygroundDB');
 
 // Insert a few documents into the sales collection.
 db.getCollection('patients').insertMany([
-  { 'patient0': 'fname', 'lname': 10, 'quantity': 2, 'date': new Date('2014-03-01T08:00:00Z') },
-  { 'patient1': 'john', 'doe': 20, 'quantity': 1, 'date': new Date('2014-03-01T09:00:00Z') },
-  { 'patient2': 'jane', 'doe': 5, 'quantity': 10, 'date': new Date('2014-03-15T09:00:00Z') },
-  { 'patient3': 'xyz', 'price': 5, 'quantity': 20, 'date': new Date('2014-04-04T11:21:39.736Z') },
-  { 'patient4': 'abc', 'price': 10, 'quantity': 10, 'date': new Date('2014-04-04T21:23:13.331Z') },
+  { 'patient0': '0000', 'fname': 'lname', 'sex': 'm', 'age': 99, 'ethnicity': 'black', 'date': new Date('2014-03-01T08:00:00Z') },
+  { 'patient1': '0001', 'john': 'doe', 'sex': 'm','age': 25, 'ethnicity': 'white', 'date': new Date('2014-03-01T08:00:00Z') },
+  { 'patient2': '0002', 'jane': 'doe', 'sex': 'f','age': 25, 'ethnicity': 'white', 'date': new Date('2014-03-01T08:00:00Z') },
+  { 'patient3': '0003', 'michael': 'jackson', 'sex': 'm','age': 88, 'ethnicity': 'black', 'date': new Date('2014-03-01T08:00:00Z') },
+  { 'patient4': 'abc', 'michael': 'jackson', 'sex': 'm','age': 88, 'ethnicity': 'black', 'date': new Date('2014-03-01T08:00:00Z') },
   { 'patient5': 'def', 'price': 7.5, 'quantity': 5, 'date': new Date('2015-06-04T05:08:13Z') },
   { 'patient6': 'def', 'price': 7.5, 'quantity': 10, 'date': new Date('2015-09-10T08:43:00Z') },
   { 'patient7': 'abc', 'price': 10, 'quantity': 5, 'date': new Date('2016-02-06T20:20:13Z') },
