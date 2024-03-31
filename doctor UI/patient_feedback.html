@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Profile - Eve Johnson</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .modal {
+            transition: transform 0.3s ease-out;
+        }
+        .modal-start {
+            transform: translateX(100%);
+        }
+        .warning-message {
+            display: none;
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 2rem;
+            width: 80%;
+            max-width: 500px;
+            z-index: 50;
+            text-align: center;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="h-screen flex">
+        <div class="w-1/6 bg-blue-800 h-full"></div>
+        <div class="w-5/6 bg-white p-10">
+            <div class="flex justify-between items-center mb-6">
+                <a href="doctor_pov.html" class="text-blue-600 text-sm">
+                    <i class="fas fa-arrow-left"></i> Survey > Eve Johnson
+                </a>
+            </div>
+            <div class="flex flex-col items-center">
+                <img class="w-24 h-24 rounded-full mb-4" src="https://placehold.co/96x96" alt="Placeholder image of Eve Johnson">
+                <h1 class="text-2xl font-bold">Eve Johnson</h1>
+                <p class="text-lg text-gray-600 mb-4">AFAB, 28</p>
+                <button onclick="openModal()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mb-4">
+                    Give Feedback
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden" id="modal">
+        <div class="modal-start modal relative top-20 mx-auto p-5 border w-11/12 md:w-3/4 lg:w-1/2 xl:w-1/3 bg-white rounded-lg shadow-lg">
+            <button onclick="closeModal()" class="absolute top-0 right-0 mt-4 mr-4">
+                <i class="fas fa-times cursor-pointer text-gray-600"></i>
+            </button>
+            <h3 class="text-lg leading-6 font-medium text-gray-900">Patient Behavior Assessment</h3>
+            <form id="feedback-form" class="px-4 py-4">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="erratic">
+                        Was the patient acting erratic?
+                    </label>
+                    <select name="erratic" id="erratic" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" required>
+                        <option value="">Select an option</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="abuse">
+                        Has the patient physically or verbally abused you in any way?
+                    </label>
+                    <select name="abuse" id="abuse" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" required>
+                        <option value="">Select an option</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="harm">
+                        Did the patient show any signs of hurting themselves?
+                    </label>
+                    <select name="harm" id="harm" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" required>
+                        <option value="">Select an option</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                
+                <div class="flex justify-between mt-4">
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-full mr-2">
+                        Submit
+                    </button>
+                    <button type="button" onclick="closeModal()" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-full w-full ml-2">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Warning Message -->
+    <div id="warning-message" class="warning-message">
+        <!-- Message content will be dynamically updated by JavaScript -->
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById("modal").classList.remove('hidden', 'modal-start');
+            document.getElementById("modal").classList.add('modal');
+        }
+
+        function closeModal() {
+            document.getElementById("modal").classList.add('modal-start');
+            setTimeout(() => {
+                document.getElementById("modal").classList.add('hidden');
+            }, 300);
+        }
+
+        function showWarning(message) {
+            const warningMessage = document.getElementById('warning-message');
+            warningMessage.innerHTML = `<p class="text-2xl font-bold mb-3">${message.title}</p><p>${message.body}</p>` +
+                                       '<button onclick="closeWarning()" class="text-lg text-blue-600"><i class="fas fa-times cursor-pointer"></i></button>';
+            warningMessage.style.display = 'block';
+            setTimeout(closeWarning, 5000);
+        }
+
+        function closeWarning() {
+            document.getElementById('warning-message').style.display = 'none';
+        }
+
+        document.getElementById('feedback-form').addEventListener('submit', function(event){
+            event.preventDefault();
+            const erratic = document.getElementById('erratic').value;
+            const abuse = document.getElementById('abuse').value;
+            const harm = document.getElementById('harm').value;
+
+            if (erratic === 'yes' || abuse === 'yes') {
+                showWarning({ title: "We Have Alerted Admin.", body: "We are very sorry for the possible mistreatment you have been subjected to." });
+            }
+            if (harm === 'yes') {
+                showWarning({ title: "Immediate Attention Needed", body: "Please engage with our support team for a detailed evaluation regarding self-harm concerns." });
+            }
+
+            closeModal();
+        });
+
+        window.onclick = function(event) {
+            let warningMsg = document.getElementById('warning-message');
+            if (event.target !== warningMsg && warningMsg.style.display === 'block') {
+                closeWarning();
+            }
+        }
+    </script>
+</body>
+</html>
