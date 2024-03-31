@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Care Guard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .modal {
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+            visibility: hidden;
+            opacity: 0;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1.1);
+            background: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        .modal.active {
+            visibility: visible;
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .modal-bg {
+            position: fixed;
+            top: 0; 
+            
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.5);
+            visibility: hidden;
+            opacity: 0;
+            z-index: 999;
+        }
+        .modal-bg.active {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="flex flex-col items-center">
+    <img class="w-24 h-24 rounded-full mb-4" src="https://placehold.co/96x96" alt="Placeholder image of Doctor Christina Wallace">
+    <h1 class="text-2xl font-bold">Ben Malone</h1>
+    <p class="text-lg text-gray-600 mb-4">Hospital B</p>
+    <button onclick="openModal()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mb-4">
+        Click to See Record
+    </button>
+</div>
+
+<div class="modal-bg"></div>
+<div class="modal">
+    <h2 class="text-xl font-semibold">Doctor Record</h2>
+    <p class="mt-2">Warnings: 3</p>
+    <p class="mt-1">Tags: Nonchalant, Dissmive, Harsh</p>
+    <h3 class="text-xl font-semibold">BELOW AVERAGE RATING. DOCTOR HAS BEEN ASSIGNED COUNSELING.</h3>
+    <button onclick="closeModal()" class="mt-4 bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded">Close</button>
+</div>
+
+<script>
+    const modal = document.querySelector('.modal');
+    const modalBg = document.querySelector('.modal-bg');
+
+    function openModal() {
+        modal.classList.add('active');
+        modalBg.classList.add('active');
+    }
+
+    function closeModal() {
+        modal.classList.remove('active');
+        modalBg.classList.remove('active');
+    }
+
+    modalBg.addEventListener('click', closeModal);
+</script>
+</body>
+</html>

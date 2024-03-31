@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Care Guard - Select Your Doctor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="container mx-auto p-4">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="mb-4 border-b">
+                <h1 class="text-2xl font-semibold">Care Guard</h1>
+                <h2 class="text-xl font-semibold text-blue-600">Which Doctor Do You Have?</h2>
+            </div>
+            
+            <!-- Search bar -->
+            <div class="mb-4 relative">
+                <input class="bg-gray-100 h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none" type="search" name="search" placeholder="Search"/>
+                <button type="submit" class="absolute right-0 top-0 mt-2 mr-4">
+                    <i class="fas fa-search text-gray-400"></i>
+                </button>
+            </div>
+
+            <!-- Doctors List -->
+            <div class="mb-4">
+                <ul>
+                    <li class="flex items-center bg-gray-200 p-2 rounded-lg mb-2">
+                        <a href="doctor_feedback.html" class="flex w-full items-center text-decoration-none">
+                            <img class="w-10 h-10 rounded-full mr-4" src="https://placehold.co/40x40" alt="Doctor Christina Wallace profile picture placeholder">
+                            <div class="flex-grow">
+                                <p class="font-bold">Christina Wallace</p>
+                                <p class="text-sm text-gray-600">Hospital A</p>
+                            </div>
+                        </a>
+                        <button>
+                            <i class="fas fa-ellipsis-h text-gray-600"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
