@@ -1,0 +1,62 @@
+Patient Survey: Quality of Care
+
+1. Question: How would you rate the overall quality of care received during your stay?
+   - Positive Response: Exceptional. The care I received was outstanding, and I felt well-supported by the compassionate staff members.
+   - Negative Response: Poor. There were significant lapses in care, including instances of medical malpractice and negligence by the nursing staff.
+
+2. Question: Were you satisfied with the cleanliness and hygiene standards of the facility?
+   - Positive Response: Yes. The facility was immaculately clean, and hygiene standards were consistently maintained to a high standard.
+   - Negative Response: No. Hygiene standards were subpar, and I observed cleanliness issues, including uncleaned spills and unattended messes in common areas.
+
+3. Question: Did you feel that your medical needs were addressed promptly and effectively?
+   - Positive Response: Absolutely. My medical needs were promptly attended to, and the healthcare team was proactive in addressing my concerns.
+   - Negative Response: Not always. There were delays in receiving assistance, and I felt my medical needs were not consistently prioritized or addressed in a timely manner, leading to concerns about medical malpractice.
+
+4. Question: How would you rate the communication between staff members and patients/residents?
+   - Positive Response: Excellent. Staff members communicated effectively and respectfully, ensuring that I was kept informed about my care plan and treatment options.
+   - Negative Response: Poor. Communication among staff members was lacking, leading to confusion about my treatment plan and discharge instructions, which raised concerns about potential malpractice.
+
+5. Question: Were you provided with enough information about your treatment options and care plan?
+   - Positive Response: Yes. I was provided with comprehensive information about my treatment options and actively involved in decision-making regarding my care.
+   - Negative Response: No. I felt uninformed about my treatment options, and the staff did not adequately explain my care plan or involve me in decision-making processes, potentially indicating malpractice.
+
+Patient Survey: Facility Environment
+
+1. Question: Did you feel safe and secure during your stay at the facility?
+   - Positive Response: Absolutely. I felt safe and secure at all times, with security measures in place to protect residents and ensure their well-being.
+   - Negative Response: No. I had concerns about safety, including unsecured entrances and inadequate supervision in communal areas, which raised concerns about potential malpractice.
+
+2. Question: Were the facilities and amenities adequate for your needs?
+   - Positive Response: Yes. The facilities and amenities met my needs and contributed to a comfortable living environment, enhancing my overall experience.
+   - Negative Response: No. The facilities were outdated, and amenities were lacking, impacting my comfort and enjoyment of the facility, raising concerns about malpractice in maintaining the facility.
+
+3. Question: How would you rate the quality of meals provided?
+   - Positive Response: Excellent. The meals were delicious, nutritious, and catered to individual dietary preferences, providing a satisfying dining experience.
+   - Negative Response: Poor. The quality of meals varied, with some being unappetizing and lacking nutritional value, raising concerns about malpractice in food preparation and nutrition management.
+
+4. Question: Did you feel respected and valued by the staff members?
+   - Positive Response: Absolutely. Staff members treated me with respect and dignity, fostering a supportive and caring environment that enhanced my well-being.
+   - Negative Response: Not always. There were instances of disrespect and indifference from staff members, negatively impacting my experience and raising concerns about malpractice in patient care.
+
+5. Question: Were your personal belongings handled with care and returned to you intact?
+   - Positive Response: Yes. My personal belongings were handled with care, and I had no issues with lost or damaged items during my stay.
+   - Negative Response: No. Some of my personal belongings were mishandled or misplaced during my stay, causing frustration and inconvenience, raising concerns about malpractice in property management.
+
+6. Question: Did you find the facility to be well-maintained and aesthetically pleasing?
+   - Positive Response: Yes. The facility was well-maintained and aesthetically pleasing, creating a pleasant and comfortable environment for residents.
+   - Negative Response: No. The facility was poorly maintained, with visible signs of wear and neglect, detracting from the overall ambiance and comfort of the facility, raising concerns about malpractice in facility maintenance.
+
+7. Question: Were you satisfied with the level of medical expertise and professionalism exhibited by the healthcare providers?
+   - Positive Response: Absolutely. The healthcare providers demonstrated exceptional medical expertise and professionalism, instilling confidence in the quality of care provided.
+   - Negative Response: No. I encountered instances of medical errors and lapses in professionalism, which undermined my trust in the healthcare team and the care provided, raising concerns about malpractice in medical care.
+
+8. Question: Did you feel that your emotional and psychological needs were adequately addressed during your stay?
+   - Positive Response: Yes. The staff members were attentive to my emotional and psychological needs, offering support and reassurance during challenging times.
+   - Negative Response: No. My emotional and psychological needs were overlooked, and I felt unsupported and isolated during my stay, raising concerns about malpractice in addressing mental health needs.
+
+9. Question: Were you satisfied with the frequency and quality of social activities and recreational opportunities provided?
+   - Positive Response: Yes. The facility offered a diverse range of social activities and recreational opportunities, fostering a vibrant and engaging community for residents.
+   - Negative Response: No. Social activities and recreational opportunities were limited, and there were few opportunities for residents to socialize and engage in meaningful activities, raising concerns about malpractice in providing holistic care.
+
+10. Question: Did you feel that your cultural and religious preferences were respected and accommodated during your stay?
+    - Positive Response: Yes. My cultural and religious preferences were respected and accommodated by the staff members, allowin

@@ -18,20 +18,21 @@ import { MemoryVectorStore } from "langchain/vectorstores/memory";
 import { createRetrievalChain } from "langchain/chains/retrieval";
 
 import * as dotenv from "dotenv";
-dotenv.config();  // dont for get to add .env file with OPENAI_API_KEY
+dotenv.config();  // dont forget to add .env file with OPENAI_API_KEY
 
 const model = new ChatOpenAI({
     modelName: "gpt-3.5-turbo",
-    temperature: 0.0,
+    temperature: 0.3,
 });
 
 const prompt = ChatPromptTemplate.fromTemplate(
-  `Given the paramount importance of maintaining comprehensive records in our nursing home environment, we require a :
-  detailed summary of the recent appointment with one of our patients. This summary should encapsulate :
-  all pertinent data gathered during the appointment, including the patient's current health status, vital signs, medication review, assessment findings, treatment :
-  adjustments, and recommendations for ongoing care. The aim is to have a thorough overview of the patient's condition and the actions :
-  taken during the appointment, facilitating seamless communication and informed decision-making among the care team. Please generate the complete summary based:
-   on the data collected from the appointment.Answer the user's question from the following context: 
+  `This prompt will be utilized to scrutinize and identify any potential :
+  instances of malpractice within the nursing home. It serves as a critical :
+  safeguard for both patients and staff. The primary objective is to obtain a :
+  comprehensive overview of the patient's condition and the interventions undertaken :
+  during the appointment, thereby facilitating seamless communication and informed :
+  decision-making among the care team. Please generate a detailed summary based on :
+  the data collected from the appointment to address the user's inquiry within the specified context.
   {context}:
   Make the ouput more comprehensive
   Question: {input}`
@@ -43,7 +44,7 @@ const chain = await createStuffDocumentsChain({
 });
 
 const loader = new DirectoryLoader(
-  "DoctorsNotes",{
+  "Patientsresponse",{
     ".json": (path) => new JSONLoader(path, "/texts"),
     ".jsonl": (path) => new JSONLinesLoader(path, "/html"),
     ".txt": (path) => new TextLoader(path),
@@ -80,7 +81,7 @@ const retrievalChain = await createRetrievalChain({
 // });
 
 const response = await retrievalChain.invoke({
-  input: "Give a comprehensive review on the patients condition and all of her previous appointments be comprehensive in your response.",
+  input: "Give a comprehensive review on the patients opinion and see if there is a chance of mal practice in the nursing home.",
   context: splitDocs,});
 
 console.log(response["answer"]);
