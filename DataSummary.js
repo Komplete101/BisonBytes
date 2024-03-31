@@ -3,7 +3,9 @@ import { ChatOpenAI } from "@langchain/openai";
 import { createStuffDocumentsChain } from "langchain/chains/combine_documents";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
 
-import { CheerioWebBaseLoader } from "langchain/document_loaders/web/cheerio";
+import { DirectoryLoader } from "langchain/document_loaders/fs/directory";
+import { TextLoader } from "langchain/document_loaders/fs/text";
+
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
 
 import { OpenAIEmbeddings } from "@langchain/openai";
@@ -24,7 +26,44 @@ const prompt = ChatPromptTemplate.fromTemplate({
     //The question will be what is the summary of the appointment
 });
 
-const chain = await
+const chain = await createStuffDocumentsChain({
+  llm: model,
+  prompt,
+});
+
+const loader = new DirectoryLoader{//path
+   ".txt": (file path) => new TextLoader(file path),
+};
+
+const docs = await loader.load();
+
+const splitter = new RecursiveCharacterTextSplitter({
+  chunkSize: 1000,
+  chunkOverlap: 200,
+})
+
+const splitDocs = await splitter.splitDocuments(docs)
+
+const embeddings = new OpenAIEmbeddings()
+
+const vectorStore = await MemoryVectorStore.fromDocuments(
+  splitDocs,
+  embeddings
+);
+
+const retriever = vectorStore.asRetriever({k:2});
+
+const retrievalChain = await createRetrievalChain({
+  combineDocsChain: chain,
+  retriever,
+});
+
+const response = await retrievalChain.invoke({
+  input: "What is the summary of the appointment",
+});
+
+console.log(response);
+
 
 
 
